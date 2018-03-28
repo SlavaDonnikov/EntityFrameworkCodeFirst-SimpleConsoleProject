@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43936D0C-380C-4F7A-BBBC-8B941A9D61C9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CodeFirstDatabaseNewDatabaseSample</RootNamespace>
+    <AssemblyName>CodeFirstDatabaseNewDatabaseSample</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201803281000125_InitialCreate.cs" />
+    <Compile Include="Migrations\201803281000125_InitialCreate.Designer.cs">
+      <DependentUpon>201803281000125_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803281013297_AddUrl.cs" />
+    <Compile Include="Migrations\201803281013297_AddUrl.Designer.cs">
+      <DependentUpon>201803281013297_AddUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803281020461_AddUser.cs" />
+    <Compile Include="Migrations\201803281020461_AddUser.Designer.cs">
+      <DependentUpon>201803281020461_AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803281029346_ChangeDisplayName.cs" />
+    <Compile Include="Migrations\201803281029346_ChangeDisplayName.Designer.cs">
+      <DependentUpon>201803281029346_ChangeDisplayName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803281036268_ChangeColumnName_display_name.cs" />
+    <Compile Include="Migrations\201803281036268_ChangeColumnName_display_name.Designer.cs">
+      <DependentUpon>201803281036268_ChangeColumnName_display_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803281000125_InitialCreate.resx">
+      <DependentUpon>201803281000125_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803281013297_AddUrl.resx">
+      <DependentUpon>201803281013297_AddUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803281020461_AddUser.resx">
+      <DependentUpon>201803281020461_AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803281029346_ChangeDisplayName.resx">
+      <DependentUpon>201803281029346_ChangeDisplayName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803281036268_ChangeColumnName_display_name.resx">
+      <DependentUpon>201803281036268_ChangeColumnName_display_name.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
